@@ -23,6 +23,11 @@ module.exports = {
         { title: "Microsoft BI Hakimiyeti", text: "Power BI, Fabric, DAX, RLS, Azure Synapse ile modern veri platformları." },
         { title: "15+ Kurumsal Müşteri", text: "Türkiye ve Avrupa'da büyük ölçekli holdinglere ve uluslararası gruplara hizmet." }
       ],
+      techTitle: "Teknoloji Yetkinliği",
+      techSubtitle: "SAP ekosistemi ve Microsoft veri platformları arasında uzmanlaşmış araç seti.",
+      techSapLabel: "SAP",
+      techMsLabel: "Microsoft",
+      techOtherLabel: "Diğer",
       servicesTitle: "Hizmetlerim",
       servicesSubtitle: "SAP'tan Microsoft BI'a kadar tüm spektrumda danışmanlık.",
       clientsTitle: "Birlikte Çalıştığım Kurumlar",
@@ -97,6 +102,11 @@ module.exports = {
         { title: "Microsoft BI Mastery", text: "Modern data platforms with Power BI, Fabric, DAX, RLS and Azure Synapse." },
         { title: "15+ Enterprise Clients", text: "Serving large holdings across Türkiye and global groups across Europe." }
       ],
+      techTitle: "Tech Stack",
+      techSubtitle: "A toolkit specialized at the intersection of SAP and Microsoft data platforms.",
+      techSapLabel: "SAP",
+      techMsLabel: "Microsoft",
+      techOtherLabel: "Other",
       servicesTitle: "What I Do",
       servicesSubtitle: "Consulting across the full spectrum — from SAP to Microsoft BI.",
       clientsTitle: "Organizations I've Worked With",
