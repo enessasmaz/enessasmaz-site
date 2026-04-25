@@ -156,8 +156,22 @@ h3 { font-size: 1.15rem; }
 .hero {
   padding: var(--space-3xl) 0 var(--space-2xl);
   border-bottom: 1px solid var(--c-border);
+  position: relative;
+  overflow: hidden;
 }
-.hero-content { max-width: 760px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-3xl);
+  }
+}
+.hero-content { max-width: 600px; }
 .hero h1 {
   margin: var(--space-md) 0 var(--space-md);
   font-weight: 700;
@@ -167,6 +181,21 @@ h3 { font-size: 1.15rem; }
   margin-bottom: var(--space-xl); max-width: 600px;
 }
 .hero-cta { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+
+.hero-illustration {
+  display: none;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .hero-illustration { display: block; }
+}
+.hero-illustration svg {
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+  margin: 0 auto;
+  display: block;
+}
 
 /* ============ Pillars ============ */
 .pillars {
@@ -184,19 +213,21 @@ h3 { font-size: 1.15rem; }
   max-width: 960px;
   margin: 0 auto var(--space-xl);
 }
-@media (min-width: 560px) {
+@media (min-width: 540px) {
   .tech-grid { grid-template-columns: repeat(4, 1fr); }
 }
-@media (min-width: 920px) {
+@media (min-width: 760px) {
   .tech-grid { grid-template-columns: repeat(8, 1fr); }
 }
 .tech-item {
-  display: flex; flex-direction: column; align-items: center;
-  gap: 10px; padding: var(--space-md) var(--space-xs);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; padding: var(--space-sm) 4px;
   background: var(--c-bg);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
-  min-height: 100px;
+  min-height: 90px;
+  min-width: 0;
+  overflow: hidden;
   transition: border-color .15s, transform .15s, box-shadow .15s;
 }
 .tech-item:hover {
@@ -210,11 +241,12 @@ h3 { font-size: 1.15rem; }
   flex-shrink: 0;
 }
 .tech-item span {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--c-text);
   text-align: center;
   line-height: 1.2;
+  word-break: break-word;
 }
 .tech-detail {
   text-align: center;

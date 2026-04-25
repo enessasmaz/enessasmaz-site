@@ -9,14 +9,17 @@ enUrl: /en/
 
 <section class="hero">
   <div class="container">
-    <div class="hero-content">
-      <span class="eyebrow">{{ s.home.heroEyebrow }}</span>
-      <h1>Enes Şaşmaz</h1>
-      <p class="hero-tagline">{{ site.tagline.tr }}. {{ site.intro.tr }}</p>
-      <div class="hero-cta">
-        <a href="/tr/iletisim/" class="btn btn-primary">{{ s.cta.contactMe }}</a>
-        <a href="/tr/referanslar/" class="btn btn-outline">{{ s.cta.seeWork }}</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="eyebrow">{{ s.home.heroEyebrow }}</span>
+        <h1>Enes Şaşmaz</h1>
+        <p class="hero-tagline">{{ site.tagline.tr }}. {{ site.intro.tr }}</p>
+        <div class="hero-cta">
+          <a href="/tr/iletisim/" class="btn btn-primary">{{ s.cta.contactMe }}</a>
+          <a href="/tr/referanslar/" class="btn btn-outline">{{ s.cta.seeWork }}</a>
+        </div>
       </div>
+      {% include "partials/hero-illustration.njk" %}
     </div>
   </div>
 </section>
