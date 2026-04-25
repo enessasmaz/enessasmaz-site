@@ -1,0 +1,71 @@
+---
+permalink: /tr/hakkimda/
+title: Hakkımda
+trUrl: /tr/hakkimda/
+enUrl: /en/about/
+---
+{% set s = strings[lang] %}
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <h1>{{ s.about.title }}</h1>
+    </div>
+
+    <div class="about-bio">
+      <p>Marmara Üniversitesi İstatistik bölümünden mezuniyetimden bu yana veri analitiği, raporlama, veri mühendisliği ve görselleştirme alanlarında çeşitli projelerde çalıştım. Bugün, SAP ve SAP-dışı sistemlerin BusinessObjects, Power BI ve SAP Analytics Cloud'a entegrasyonu konusunda uçtan uca danışmanlık hizmeti veriyorum.</p>
+
+      <p>2021'den itibaren Logitrans, Hasçelik ve Anatolia Tile bünyesinde Data/BI Analyst olarak çalıştım; 2024'ten beri IBSS çatısı altında bağımsız danışman olarak Türkiye ve Avrupa'daki kurumlarla çalışıyorum.</p>
+
+      <p>Çekirdek uzmanlığım: <strong>SAP BW, SAP BO, SAP Datasphere, SAP HANA, SAP Data Services, SAP Analytics Cloud, MSSQL Server, Snowflake, Microsoft Fabric, Power BI ve Tableau.</strong></p>
+
+      <p style="margin-top: 2rem;">
+        <a href="{{ site.cvFile }}" class="btn btn-primary" download>{{ s.cta.downloadCv }}</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <h2>{{ s.about.experienceTitle }}</h2>
+    </div>
+    <div class="timeline">
+      {% for item in experience %}
+      <div class="timeline-item">
+        <div class="timeline-period">{{ item.period.tr }}</div>
+        <div class="timeline-role">
+          <h4>{{ item.role.tr }}</h4>
+          <span class="company">{{ item.company }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <h2>{{ s.about.certsTitle }}</h2>
+    </div>
+    <div class="cert-grid">
+      {% for cert in certifications %}
+      <div class="cert-item">
+        <div class="cert-name">{{ cert.name }}</div>
+        <div class="cert-meta">{{ cert.issuer }} · {{ cert.year }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <h2>{{ s.about.educationTitle }}</h2>
+      <p style="margin-top:1rem;">{{ s.about.education }}</p>
+    </div>
+  </div>
+</section>

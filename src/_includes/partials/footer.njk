@@ -1,0 +1,19 @@
+{% set s = strings[lang] %}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <strong>Enes Şaşmaz</strong>
+      <span class="muted">{{ s.footer.tagline }}</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <a href="tel:{{ site.phoneRaw }}">{{ site.phone }}</a>
+      {% if site.social.linkedin %}<a href="{{ site.social.linkedin }}" rel="noopener" target="_blank">LinkedIn</a>{% endif %}
+      {% if site.social.github %}<a href="{{ site.social.github }}" rel="noopener" target="_blank">GitHub</a>{% endif %}
+    </div>
+  </div>
+  <div class="container copyright">
+    <small>© 2026 Enes Şaşmaz. {{ s.footer.copyright }}</small>
+  </div>
+</footer>

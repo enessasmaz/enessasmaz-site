@@ -1,0 +1,6 @@
+{
+  "lang": "tr",
+  "layout": "layouts/post.njk",
+  "permalink": "/tr/blog/{{ page.fileSlug }}/",
+  "tags": ["postsTr"]
+}

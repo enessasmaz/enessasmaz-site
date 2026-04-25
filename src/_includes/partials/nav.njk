@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="container nav-inner">
+    <a href="/{{ lang }}/" class="brand">
+      <span class="brand-name">Enes Şaşmaz</span>
+      <span class="brand-dot"></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main">
+      {% set s = strings[lang] %}
+      {% if lang == 'tr' %}
+        <a href="/tr/hakkimda/" class="{% if page.url == '/tr/hakkimda/' %}active{% endif %}">{{ s.nav.about }}</a>
+        <a href="/tr/hizmetler/" class="{% if page.url == '/tr/hizmetler/' %}active{% endif %}">{{ s.nav.services }}</a>
+        <a href="/tr/referanslar/" class="{% if page.url == '/tr/referanslar/' %}active{% endif %}">{{ s.nav.clients }}</a>
+        <a href="/tr/blog/" class="{% if '/tr/blog' in page.url %}active{% endif %}">{{ s.nav.blog }}</a>
+        <a href="/tr/iletisim/" class="{% if page.url == '/tr/iletisim/' %}active{% endif %}">{{ s.nav.contact }}</a>
+      {% else %}
+        <a href="/en/about/" class="{% if page.url == '/en/about/' %}active{% endif %}">{{ s.nav.about }}</a>
+        <a href="/en/services/" class="{% if page.url == '/en/services/' %}active{% endif %}">{{ s.nav.services }}</a>
+        <a href="/en/clients/" class="{% if page.url == '/en/clients/' %}active{% endif %}">{{ s.nav.clients }}</a>
+        <a href="/en/blog/" class="{% if '/en/blog' in page.url %}active{% endif %}">{{ s.nav.blog }}</a>
+        <a href="/en/contact/" class="{% if page.url == '/en/contact/' %}active{% endif %}">{{ s.nav.contact }}</a>
+      {% endif %}
+
+      <span class="lang-switch" aria-label="Language">
+        <a href="{{ trUrl or '/tr/' }}" class="{% if lang == 'tr' %}active{% endif %}">TR</a>
+        <span>/</span>
+        <a href="{{ enUrl or '/en/' }}" class="{% if lang == 'en' %}active{% endif %}">EN</a>
+      </span>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+<article class="client-card">
+  <div class="client-logo">
+    <img src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-logo'); this.parentElement.dataset.label='{{ client.name }}';">
+  </div>
+  <div class="client-meta">
+    <h3 class="client-name">{{ client.name }} <span class="client-country">{{ client.country }}</span></h3>
+    <p class="client-project"><strong>{{ client.project[lang] }}</strong></p>
+    <p class="client-role muted">{{ client.role[lang] }} · {{ client.duration[lang] }}</p>
+    <p class="client-desc">{{ client.description[lang] }}</p>
+  </div>
+</article>

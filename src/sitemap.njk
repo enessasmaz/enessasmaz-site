@@ -1,0 +1,27 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+layout: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set staticUrls = ["/tr/", "/tr/hakkimda/", "/tr/hizmetler/", "/tr/referanslar/", "/tr/blog/", "/tr/iletisim/", "/en/", "/en/about/", "/en/services/", "/en/clients/", "/en/blog/", "/en/contact/"] %}
+{%- for url in staticUrls %}
+  <url>
+    <loc>{{ site.url }}{{ url }}</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+{%- endfor %}
+{%- for post in collections.postsTr %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | formatDate("en") }}</lastmod>
+  </url>
+{%- endfor %}
+{%- for post in collections.postsEn %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | formatDate("en") }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>

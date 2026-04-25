@@ -1,0 +1,31 @@
+---
+permalink: /tr/blog/
+title: Blog
+trUrl: /tr/blog/
+enUrl: /en/blog/
+---
+{% set s = strings[lang] %}
+{% set posts = collections.postsTr %}
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <h1>{{ s.blog.title }}</h1>
+      <p>{{ s.blog.subtitle }}</p>
+    </div>
+
+    <div class="post-list">
+      {% if posts.length %}
+        {% for post in posts %}
+        <article class="post-item">
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          <div class="post-meta">{{ post.date | formatDate(lang) }}</div>
+          {% if post.data.excerpt %}<p class="post-excerpt">{{ post.data.excerpt }}</p>{% endif %}
+        </article>
+        {% endfor %}
+      {% else %}
+        <p class="muted text-center">{{ s.blog.empty }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>

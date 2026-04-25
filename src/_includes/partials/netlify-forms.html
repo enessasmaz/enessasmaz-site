@@ -1,0 +1,17 @@
+<!--
+  Hidden static form for Netlify form detection.
+  Netlify scans built HTML for forms with data-netlify="true". Some setups need a
+  static placeholder so detection works even when forms are added dynamically.
+-->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="text" name="subject" />
+  <textarea name="message"></textarea>
+</form>
+<form name="contact-en" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="text" name="subject" />
+  <textarea name="message"></textarea>
+</form>

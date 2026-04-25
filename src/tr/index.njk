@@ -1,0 +1,99 @@
+---
+permalink: /tr/
+title: Ana Sayfa
+trUrl: /tr/
+enUrl: /en/
+---
+{% set s = strings[lang] %}
+{% set posts = collections.postsTr %}
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">{{ s.home.heroEyebrow }}</span>
+      <h1>Enes Şaşmaz</h1>
+      <p class="hero-tagline">{{ site.tagline.tr }}. {{ site.intro.tr }}</p>
+      <div class="hero-cta">
+        <a href="/tr/iletisim/" class="btn btn-primary">{{ s.cta.contactMe }}</a>
+        <a href="/tr/referanslar/" class="btn btn-outline">{{ s.cta.seeWork }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="pillars">
+      {% for p in s.home.pillars %}
+      <div class="pillar">
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ s.home.servicesTitle }}</h2>
+      <p>{{ s.home.servicesSubtitle }}</p>
+    </div>
+    <div class="services-grid">
+      {% for service in services %}
+        {% include "partials/service-card.njk" %}
+      {% endfor %}
+    </div>
+    <div class="text-center mt-xl">
+      <a href="/tr/hizmetler/" class="btn btn-outline">{{ s.cta.readMore }} →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>{{ s.home.clientsTitle }}</h2>
+      <p>{{ s.home.clientsSubtitle }}</p>
+    </div>
+    <div class="client-strip">
+      {% for client in clients %}
+      <div class="client-logo">
+        <img src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('no-logo'); this.parentElement.dataset.label='{{ client.name }}';">
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-xl">
+      <a href="/tr/referanslar/" class="btn btn-outline">{{ s.cta.readMore }} →</a>
+    </div>
+  </div>
+</section>
+
+{% if posts.length %}
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <h2>{{ s.home.latestPostsTitle }}</h2>
+    </div>
+    <div class="post-list">
+      {% for post in posts | limit(3) %}
+      <article class="post-item">
+        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+        <div class="post-meta">{{ post.date | formatDate(lang) }}</div>
+        {% if post.data.excerpt %}<p class="post-excerpt">{{ post.data.excerpt }}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="cta-banner">
+      <h3>{{ s.home.contactCta }}</h3>
+      <a href="/tr/iletisim/" class="btn btn-primary">{{ s.cta.contactMe }}</a>
+    </div>
+  </div>
+</section>

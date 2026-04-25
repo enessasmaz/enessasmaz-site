@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — Enes Şaşmaz</title>
+  <meta name="description" content="{{ excerpt or strings[lang].blog.subtitle }}">
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ excerpt or '' }}">
+  <meta property="og:locale" content="{% if lang == 'tr' %}tr_TR{% else %}en_US{% endif %}">
+
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+</head>
+<body>
+  {% include "partials/nav.njk" %}
+
+  <main>
+    <article class="post-article">
+      <a href="/{{ lang }}/blog/" class="muted">{{ strings[lang].cta.back }} {{ strings[lang].nav.blog }}</a>
+      <h1 style="margin-top: 1rem;">{{ title }}</h1>
+      <div class="post-meta">{{ page.date | formatDate(lang) }}</div>
+      <div class="post-content">
+        {{ content | safe }}
+      </div>
+    </article>
+  </main>
+
+  {% include "partials/footer.njk" %}
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

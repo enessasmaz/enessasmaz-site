@@ -1,0 +1,31 @@
+---
+permalink: /en/clients/
+title: Clients
+trUrl: /tr/referanslar/
+enUrl: /en/clients/
+---
+{% set s = strings[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h1>{{ s.clients.title }}</h1>
+      <p>{{ s.clients.subtitle }}</p>
+    </div>
+
+    <div class="clients-grid">
+      {% for client in clients %}
+        {% include "partials/client-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="cta-banner">
+      <h3>{{ s.home.contactCta }}</h3>
+      <a href="/en/contact/" class="btn btn-primary">{{ s.cta.contactMe }}</a>
+    </div>
+  </div>
+</section>

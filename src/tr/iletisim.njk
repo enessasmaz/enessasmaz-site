@@ -1,0 +1,62 @@
+---
+permalink: /tr/iletisim/
+title: İletişim
+trUrl: /tr/iletisim/
+enUrl: /en/contact/
+---
+{% set s = strings[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h1>{{ s.contact.title }}</h1>
+      <p>{{ s.contact.subtitle }}</p>
+    </div>
+
+    <div class="contact-grid">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/tr/iletisim/?success=1">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="lang" value="tr">
+        <p style="display:none;"><label>Bot field: <input name="bot-field"></label></p>
+
+        <div class="form-field">
+          <label for="name">{{ s.contact.formName }}</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="form-field">
+          <label for="email">{{ s.contact.formEmail }}</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-field">
+          <label for="subject">{{ s.contact.formSubject }}</label>
+          <input type="text" name="subject" id="subject">
+        </div>
+        <div class="form-field">
+          <label for="message">{{ s.contact.formMessage }}</label>
+          <textarea name="message" id="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ s.cta.sendMessage }}</button>
+      </form>
+
+      <aside class="contact-info">
+        <h3>{{ s.contact.directContact }}</h3>
+        <dl>
+          <dt>E-posta</dt>
+          <dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+          <dt>Telefon</dt>
+          <dd><a href="tel:{{ site.phoneRaw }}">{{ site.phone }}</a></dd>
+          <dt>Konum</dt>
+          <dd>{{ site.location.tr }}</dd>
+          {% if site.social.linkedin %}
+          <dt>LinkedIn</dt>
+          <dd><a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">{{ site.social.linkedin | replace("https://www.", "") }}</a></dd>
+          {% endif %}
+          {% if site.social.github %}
+          <dt>GitHub</dt>
+          <dd><a href="{{ site.social.github }}" target="_blank" rel="noopener">{{ site.social.github | replace("https://", "") }}</a></dd>
+          {% endif %}
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>

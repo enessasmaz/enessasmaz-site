@@ -1,0 +1,17 @@
+{% set s = strings[lang] %}
+<article class="service-card">
+  <div class="service-icon" data-icon="{{ service.icon }}"></div>
+  <h3>{{ service.title[lang] }}</h3>
+  <p class="service-short">{{ service.short[lang] }}</p>
+  {% if showBullets %}
+  <ul class="service-bullets">
+    {% for b in service.bullets[lang] %}<li>{{ b }}</li>{% endfor %}
+  </ul>
+  {% if service.appliedAt and service.appliedAt.length %}
+  <p class="service-applied muted">
+    <strong>{{ s.services.appliedAt }}</strong>
+    {% for slug in service.appliedAt %}{% set c = clients | selectattr("slug", "equalto", slug) | first %}{% if c %}{{ c.name }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}
+  </p>
+  {% endif %}
+  {% endif %}
+</article>

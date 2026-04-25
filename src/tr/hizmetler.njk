@@ -1,0 +1,31 @@
+---
+permalink: /tr/hizmetler/
+title: Hizmetler
+trUrl: /tr/hizmetler/
+enUrl: /en/services/
+showBullets: true
+---
+{% set s = strings[lang] %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h1>{{ s.services.title }}</h1>
+      <p>{{ s.services.subtitle }}</p>
+    </div>
+
+    <div class="services-grid">
+      {% for service in services %}
+        {% include "partials/service-card.njk" %}
+      {% endfor %}
+    </div>
+
+    <div class="container-narrow">
+      <div class="cta-banner">
+        <h3>{{ s.services.ctaTitle }}</h3>
+        <p>{{ s.services.ctaText }}</p>
+        <a href="/tr/iletisim/" class="btn btn-primary">{{ s.cta.contactMe }}</a>
+      </div>
+    </div>
+  </div>
+</section>
