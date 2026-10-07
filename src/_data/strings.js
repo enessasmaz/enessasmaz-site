@@ -6,7 +6,9 @@ module.exports = {
       services: "Hizmetler",
       clients: "Referanslar",
       blog: "Blog",
-      contact: "İletişim"
+      contact: "İletişim",
+      direksiyon: "Direksiyon",
+      privateHint: "Giriş gerektirir"
     },
     cta: {
       contactMe: "İletişime Geç",
@@ -85,7 +87,9 @@ module.exports = {
       services: "Services",
       clients: "Clients",
       blog: "Blog",
-      contact: "Contact"
+      contact: "Contact",
+      direksiyon: "Direksiyon",
+      privateHint: "Login required"
     },
     cta: {
       contactMe: "Get in Touch",

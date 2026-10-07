@@ -21,6 +21,11 @@
         <a href="/en/contact/" class="{% if page.url == '/en/contact/' %}active{% endif %}">{{ s.nav.contact }}</a>
       {% endif %}
 
+      <a href="https://direksiyon.enessasmaz.com" class="nav-private" rel="nofollow" title="{{ s.nav.privateHint }}">
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+        {{ s.nav.direksiyon }}
+      </a>
+
       <span class="lang-switch" aria-label="Language">
         <a href="{{ trUrl or '/tr/' }}" class="{% if lang == 'tr' %}active{% endif %}">TR</a>
         <span>/</span>
